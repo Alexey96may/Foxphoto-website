@@ -8,7 +8,51 @@ html {
 body {
     background-color: vars.$lightBgColor;
     font-family: vars.$mainFontFamily;
+    font-weight: 400;
     color: vars.$mainTextColor;
+}
+
+h1 {
+    font-size: 52px;
+    color: vars.$lightTextColor;
+    font-weight: 800;
+    line-height: 1.63em;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.63em;
+}
+
+p {
+    line-height: 1.77em;
+}
+
+a {
+    line-height: 2.05em;
+    font-size: 18px;
+    color: vars.$linkTextColor;
+    text-decoration: underline;
+    transition: all vars.$basicTransTime ease;
+
+    &:hover {
+        text-decoration: none;
+
+        @media (hover: none) {
+            text-decoration: underline;
+        }
+    }
 }
 
 .body__fixed {
