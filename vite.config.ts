@@ -4,11 +4,11 @@ import handlebars from "vite-plugin-handlebars";
 import { svgSpritemap } from "vite-plugin-svg-spritemap";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
-// import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import viteCompression from "vite-plugin-compression";
 import { optimizeImages } from "./config/img/imageOptimizer";
 import { fontPlugIn } from "./config/fonts/font-plugin";
-import cp from "vite-plugin-cp";
+// import cp from "vite-plugin-cp";
 import { wrapImgWithPicture } from "./config/img/wrapImgWithPicture";
 import { DEFAULT_OPTIONS } from "./config/img/imageOptimizerConfig";
 import path from "path";
@@ -52,7 +52,7 @@ export default {
             pattern: "src/assets/sprites/*.svg",
         }),
 
-        // ViteImageOptimizer(DEFAULT_OPTIONS),
+        ViteImageOptimizer(DEFAULT_OPTIONS),
 
         viteCompression({
             algorithm: "brotliCompress",

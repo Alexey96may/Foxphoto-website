@@ -1,5 +1,6 @@
 @use "../utils/fonts";
 @use "../utils/vars";
+@use "../utils/mixins";
 
 html {
     font-size: vars.$basicFontSize;
@@ -40,17 +41,34 @@ p {
 }
 
 a {
+    display: inline-block;
+    position: relative;
     line-height: 2.05em;
     font-size: 18px;
     color: vars.$linkTextColor;
-    text-decoration: underline;
     transition: all vars.$basicTransTime ease;
+}
 
-    &:hover {
-        text-decoration: none;
+.underline {
+    &::after {
+        content: "";
+        pointer-events: none;
+        transition: all vars.$basicTransTime ease;
+        height: 1px;
+        width: 100%;
+        background-color: vars.$linkTextColor;
+        @include mixins.position(absolute, -1, bottom, left, 0, 0);
+    }
+}
+
+.underline:hover {
+    &::after {
+        margin-left: 50%;
+        width: 0%;
 
         @media (hover: none) {
-            text-decoration: underline;
+            margin-left: 0%;
+            width: 100%;
         }
     }
 }
@@ -61,6 +79,7 @@ a {
 
 .container {
     max-width: vars.$containerWidth;
+    padding: 0 vars.$containerPadding;
     margin: 0 auto;
 }
 
