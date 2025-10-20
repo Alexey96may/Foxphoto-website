@@ -30,12 +30,16 @@ export default {
         cp({
             targets: [
                 {
-                    src: path.resolve(
-                        __dirname,
-                        "src/assets/img/**/*.[jpg,jpeg,png]"
-                    ),
+                    src: path.resolve(__dirname, "src/assets/img/**/*.jpg"),
                     dest: path.resolve(__dirname, "dist/assets/img"),
-                    flatten: true,
+                },
+                {
+                    src: path.resolve(__dirname, "src/assets/img/**/*.jpeg"),
+                    dest: path.resolve(__dirname, "dist/assets/img"),
+                },
+                {
+                    src: path.resolve(__dirname, "src/assets/img/**/*.png"),
+                    dest: path.resolve(__dirname, "dist/assets/img"),
                 },
             ],
         }),
@@ -52,9 +56,9 @@ export default {
 
         Inspect(),
 
-        PluginChecker({
-            typescript: true,
-        }),
+        // PluginChecker({
+        //     typescript: true,
+        // }),
 
         handlebars({
             reloadOnPartialChange: true,
@@ -90,18 +94,6 @@ export default {
         rollupOptions: {
             input: {
                 main: path.resolve(__dirname, "index.html"),
-            },
-
-            output: {
-                manualChunks(id: string) {
-                    if (id.includes("node_modules")) {
-                        return id
-                            .toString()
-                            .split("node_modules/")[1]
-                            .split("/")[0]
-                            .toString();
-                    }
-                },
             },
         },
     },

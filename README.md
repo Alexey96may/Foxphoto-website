@@ -10,4 +10,4 @@
 
 ## Original Mobile Design Layout
 
-![Alt-Original mobile Design Layout](/mobile_design.webp)
+![Alt-Original mobile Design Layout](/design-mob.webp)
