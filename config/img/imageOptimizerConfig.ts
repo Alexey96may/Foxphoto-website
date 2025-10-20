@@ -13,7 +13,6 @@ export const DEFAULT_OPTIONS = {
                 params: {
                     overrides: {
                         cleanupNumericValues: false,
-                        removeViewBox: false,
                     },
                     cleanupIDs: {
                         minify: false,

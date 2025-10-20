@@ -2,8 +2,8 @@ import sharp from "sharp";
 import fs from "fs";
 import path from "path";
 
-export async function optimizeImages() {
-    const imageDir = path.resolve(__dirname, "../../dist/assets/img");
+export async function optimizeImages(imgPath: string) {
+    const imageDir = imgPath;
 
     let files;
 
@@ -39,4 +39,4 @@ export async function optimizeImages() {
     }
 }
 
-optimizeImages();
+// optimizeImages();
