@@ -2,18 +2,14 @@
 @use "../utils/mixins";
 
 .header {
-    padding: 16px 0;
-
-    @media (max-width: vars.$mediaMobile) {
-        padding: 8px 0;
-    }
-
-    .container {
+    &__up {
         @include mixins.flex(space-between, center);
         gap: vars.$mainGap;
+        padding: 16px 0;
 
         @media (max-width: vars.$mediaMobile) {
             gap: 14px;
+            padding: 8px 0;
         }
     }
 }
@@ -22,12 +18,20 @@
     @include mixins.flex(flex-start, center);
     gap: 34px;
 
+    @media (max-width: vars.$mediaSmallTablet) {
+        gap: 14px;
+    }
+
     @media (max-width: vars.$mediaMobile) {
         gap: 8px;
     }
 }
 
 .logo {
+    a {
+        display: block;
+    }
+
     svg {
         display: block;
         width: 246px;
@@ -47,12 +51,19 @@
     @media (max-width: vars.$mediaMobile) {
         gap: 0px;
     }
+    @media (max-width: vars.$mediaSmallMobile) {
+        display: none;
+    }
 }
 
 .tel {
     font-size: 24px;
     color: vars.$mainTextColor;
     font-weight: 600;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 18px;
+    }
 
     @media (max-width: vars.$mediaMobile) {
         font-size: 14px;
@@ -64,6 +75,9 @@
 }
 
 .address {
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 14px;
+    }
     @media (max-width: vars.$mediaMobile) {
         font-size: 12px;
     }
@@ -83,20 +97,25 @@
 }
 
 .social {
-    svg {
-        width: 48px;
-        height: 48px;
-        fill: #3e6e97;
-        display: block;
-        transition: all vars.$basicTransTime ease;
+    &:hover,
+    &:focus-visible {
+        outline: none;
 
-        &:hover {
+        svg {
             fill: #2d7fa3;
 
             @media (hover: none) {
                 fill: #3e6e97;
             }
         }
+    }
+
+    svg {
+        width: 48px;
+        height: 48px;
+        fill: #3e6e97;
+        display: block;
+        transition: all vars.$basicTransTime ease;
 
         @media (max-width: vars.$mediaMobile) {
             width: 21px;
@@ -131,7 +150,7 @@
 }
 
 .desctop {
-    display: block;
+    display: initial;
 
     @media (max-width: vars.$mediaMobile) {
         display: none;
@@ -174,5 +193,71 @@
         &::after {
             @include mixins.position(absolute, -1, bottom, left, 0, 0);
         }
+    }
+}
+
+.nav-wrapper {
+    background-color: #00afcc;
+    min-height: 8px;
+    padding: 0;
+}
+
+.nav {
+    @include mixins.flex(space-between, center);
+    gap: vars.$mainGap;
+
+    @media (max-width: vars.$mediaMobile) {
+        display: none;
+    }
+}
+
+.nav__list {
+    @include mixins.flex(flex-start, center);
+    overflow: auto;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+    }
+}
+
+.nav__item {
+    a {
+        font-size: 20px;
+        color: vars.$lightTextColor;
+        font-weight: 700;
+        white-space: nowrap;
+        padding: 14px;
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            font-size: 16px;
+            padding: 12px;
+        }
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            font-size: 14px;
+            padding: 15px 22px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+            background-color: vars.$lightBgColor;
+            color: vars.$mainTextColor;
+
+            @media (hover: none) {
+                background-color: inherit;
+                color: vars.$lightTextColor;
+            }
+        }
+    }
+}
+
+.nav__list-spare {
+    border-left: 2px solid vars.$lightTextColor;
+
+    &:first-child a {
+        padding-left: 0;
     }
 }
