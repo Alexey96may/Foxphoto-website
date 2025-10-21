@@ -1,0 +1,214 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.hero {
+}
+
+.hero__up-container {
+    background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+}
+
+.webp {
+    .hero__up-container {
+        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+    }
+}
+
+.avif {
+    .hero__up-container {
+        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+    }
+}
+
+.slider {
+    position: relative;
+    padding-top: 33px;
+    padding-bottom: 40px;
+    @include mixins.flex(flex-start, flex-start);
+
+    @media (max-width: vars.$mediaMobile) {
+        padding-top: 9px;
+        padding-bottom: 55px;
+    }
+}
+
+.slide {
+    @include mixins.flex(center, center);
+    gap: 70px;
+    width: 100%;
+
+    @media (max-width: vars.$mediaTablet) {
+        gap: 20px;
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        gap: 18px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.slide__img-wrapper {
+    flex-basis: 570px;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        aspect-ratio: 1.78;
+    }
+
+    @media (max-width: vars.$mediaTablet) {
+        flex-basis: 420px;
+    }
+    @media (max-width: vars.$mediaSmallTablet) {
+        flex-basis: 369px;
+    }
+    @media (max-width: vars.$mediaMobile) {
+        flex-basis: unset;
+        width: 100%;
+    }
+}
+
+.slide__info {
+    flex-basis: 675px;
+    flex-grow: 1;
+    @include mixins.flex(flex-start, flex-start, column);
+    padding-bottom: 20px;
+    gap: 32px;
+
+    @media (max-width: vars.$mediaTablet) {
+        flex-basis: 520px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        flex-basis: unset;
+        gap: 18px;
+    }
+}
+
+.slide__title {
+    font-size: 52px;
+    color: vars.$lightTextColor;
+    line-height: 1.36;
+    font-weight: 800;
+
+    @media (max-width: vars.$mediaTablet) {
+        font-size: 40px;
+    }
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 36px;
+    }
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 24px;
+    }
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 22px;
+    }
+}
+
+.slide__button {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 20px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 18px;
+        align-self: center;
+        padding: 8px 26px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 14px;
+    }
+}
+
+.slider__buttons {
+    @include mixins.position(absolute, -1, bottom, left, 20px, 50%);
+    @include mixins.flex(flex-start, flex-start);
+    gap: 14px;
+    translate: -50% 0;
+
+    @media (max-width: vars.$mediaMobile) {
+        gap: 11px;
+    }
+}
+
+.slider__button {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #c4c4c4;
+    padding: 0;
+    background: none;
+    transition: all vars.$basicTransTime ease;
+
+    @media (max-width: vars.$mediaMobile) {
+        width: 15px;
+        height: 15px;
+        border-width: 3px;
+    }
+
+    &:hover,
+    &:focus-visible {
+        outline: none;
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.5);
+
+        @media (hover: none) {
+            border-color: #c4c4c4;
+            background-color: transparent;
+        }
+    }
+}
+
+.hero__bottom-container {
+    background-color: #73e5ff;
+    padding-top: 35px;
+    padding-bottom: 43px;
+    position: relative;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding-top: 29px;
+        padding-bottom: 40px;
+    }
+
+    &::before {
+        content: "";
+        width: 173px;
+        height: 245px;
+        background: url("../../img/hero-bag.png") center / contain no-repeat;
+        @include mixins.position(absolute, -1, top, right, 0, 42px);
+        translate: 0 -60%;
+
+        @media (max-width: vars.$mediaTablet) {
+            display: none;
+        }
+    }
+}
+
+.hero__title {
+    margin-bottom: 13px;
+    max-width: 1000px;
+}
+
+.hero__about {
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 1000px;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 14px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 12px;
+    }
+}

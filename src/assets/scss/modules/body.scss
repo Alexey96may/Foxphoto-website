@@ -23,6 +23,19 @@ h1 {
 h2 {
     font-size: 40px;
     font-weight: 700;
+
+    @media (max-width: vars.$mediaTablet) {
+        font-size: 36px;
+    }
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 32px;
+    }
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 24px;
+    }
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 22px;
+    }
 }
 
 h3 {
@@ -85,4 +98,27 @@ a {
 
 .display--none {
     display: none;
+}
+
+.button {
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    background-color: #ff7d00;
+    color: vars.$lightTextColor;
+    transition: all vars.$basicTransTime ease;
+
+    &:hover,
+    &:focus-visible {
+        background-color: #fc912a;
+        outline: none;
+
+        @media (hover: none) {
+            background-color: #ff7d00;
+        }
+    }
+
+    &:active {
+        background-color: #ff6b00;
+    }
 }

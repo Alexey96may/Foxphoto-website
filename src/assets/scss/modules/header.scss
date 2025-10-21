@@ -261,3 +261,9 @@
         padding-left: 0;
     }
 }
+
+.to-small-tablet {
+    @media (max-width: vars.$mediaSmallTablet) {
+        display: none;
+    }
+}
