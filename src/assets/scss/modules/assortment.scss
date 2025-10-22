@@ -1,15 +1,10 @@
 @use "../utils/vars";
 @use "../utils/mixins";
 
-// 6 строк по 125px
-
 .assortment {
     padding-top: 49px;
 }
-.container {
-}
-.assortment__container {
-}
+
 .assortment__title {
     margin-bottom: 62px;
 }
@@ -111,6 +106,7 @@
         }
     }
 }
+
 .assort-item--dishes {
     .assort-item__img-wrapper {
         max-width: 143px;
@@ -136,6 +132,7 @@
         }
     }
 }
+
 .assort-item--accs {
     flex-direction: column-reverse;
 
@@ -157,6 +154,7 @@
         }
     }
 }
+
 .assort-item--gifts {
     @media (max-width: vars.$mediaMobile) {
         flex-direction: row;
@@ -165,6 +163,7 @@
         flex-direction: column;
     }
 }
+
 .assort-item--house {
     @media (max-width: vars.$mediaSmallTablet) {
         order: 3;
@@ -180,6 +179,7 @@
         }
     }
 }
+
 .assort-item--photo {
     .assort-item__img-wrapper {
         max-width: 196px;
