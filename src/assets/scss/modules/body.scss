@@ -41,6 +41,19 @@ h2 {
 h3 {
     font-size: 36px;
     font-weight: 700;
+
+    @media (max-width: vars.$mediaTablet) {
+        font-size: 30px;
+    }
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 30px;
+    }
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 20px;
+    }
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 18px;
+    }
 }
 
 h4 {

@@ -1,0 +1,202 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+// 6 строк по 125px
+
+.assortment {
+    padding-top: 49px;
+}
+.container {
+}
+.assortment__container {
+}
+.assortment__title {
+    margin-bottom: 62px;
+}
+
+.assortment__flex {
+    @include mixins.flex(flex-start, flex-start, column, wrap);
+    max-height: 980px;
+    width: 100%;
+    row-gap: 20px;
+    overflow: hidden;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        max-height: 1180px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        max-height: unset;
+        flex-wrap: nowrap;
+        gap: 38px;
+    }
+}
+
+.assort-item {
+    @include mixins.flex(flex-start, flex-start, column);
+    gap: 17px;
+
+    @media (max-width: vars.$mediaMobile) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        gap: 5px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+}
+
+.assort-item__img-wrapper {
+    width: 185px;
+    height: 185px;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.assort-item__title {
+    margin-bottom: 10px;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 26px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 16px;
+    }
+}
+
+.assort-item__list {
+    li {
+        margin-bottom: 16px;
+
+        @media (max-width: vars.$mediaMobile) {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: vars.$mediaSmallMobile) {
+            margin-bottom: 10px;
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    a {
+        font-size: 18px;
+        line-height: 1;
+        white-space: nowrap;
+
+        @media (max-width: vars.$mediaMobile) {
+            font-size: 16px;
+        }
+    }
+}
+
+.assort-item--clothes {
+    .assort-item__img-wrapper {
+        max-width: 170px;
+        max-height: 148px;
+
+        @media (max-width: vars.$mediaMobile) {
+            max-width: 140px;
+            max-height: 121px;
+        }
+    }
+}
+.assort-item--dishes {
+    .assort-item__img-wrapper {
+        max-width: 143px;
+        max-height: 124px;
+
+        @media (max-width: vars.$mediaMobile) {
+            max-width: 118px;
+            max-height: 103px;
+        }
+    }
+
+    .assort-item__img-wrapper--smallTablet {
+        display: none;
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            display: block;
+            max-width: 196px;
+            max-height: 172px;
+        }
+
+        @media (max-width: vars.$mediaMobile) {
+            display: none;
+        }
+    }
+}
+.assort-item--accs {
+    flex-direction: column-reverse;
+
+    @media (max-width: vars.$mediaMobile) {
+        flex-direction: row-reverse;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        flex-direction: column;
+    }
+
+    .assort-item__img-wrapper {
+        max-width: 140px;
+        max-height: 198px;
+
+        @media (max-width: vars.$mediaMobile) {
+            max-width: 125px;
+            max-height: 176px;
+        }
+    }
+}
+.assort-item--gifts {
+    @media (max-width: vars.$mediaMobile) {
+        flex-direction: row;
+    }
+    @media (max-width: vars.$mediaMobile) {
+        flex-direction: column;
+    }
+}
+.assort-item--house {
+    @media (max-width: vars.$mediaSmallTablet) {
+        order: 3;
+    }
+
+    .assort-item__img-wrapper {
+        max-width: 185px;
+        max-height: 185px;
+
+        @media (max-width: vars.$mediaMobile) {
+            max-width: 95px;
+            max-height: 95px;
+        }
+    }
+}
+.assort-item--photo {
+    .assort-item__img-wrapper {
+        max-width: 196px;
+        max-height: 172px;
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            display: none;
+        }
+
+        @media (max-width: vars.$mediaMobile) {
+            display: block;
+            max-width: 111px;
+            max-height: 98px;
+        }
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        order: 2;
+    }
+}
