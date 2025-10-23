@@ -11,7 +11,7 @@
 }
 
 .map__wrapper {
-    max-height: 500px;
+    height: 500px;
     overflow: hidden;
 
     img {
@@ -27,10 +27,21 @@
     @include mixins.position(absolute, -1, top, left, 16px, 16px);
     bottom: 16px;
     background-color: rgba(255, 255, 255, 0.7);
+
+    @media (max-width: vars.$mediaMobile) {
+        position: static;
+        background-color: unset;
+        width: 100%;
+        padding: 22px vars.$containerPadding 0;
+    }
 }
 
 .map__title {
     margin-bottom: 20px;
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 14px;
+    }
 }
 
 .map__contacts {
@@ -43,17 +54,29 @@
     @include mixins.flex(space-between, baseline);
     gap: vars.$mainGap;
     width: 100%;
+
+    @media (max-width: vars.$mediaMobile) {
+        display: block;
+    }
 }
 
 .map__contacts-tel {
     @include mixins.flex(space-between, baseline);
     gap: vars.$mainGap;
     width: 100%;
+
+    @media (max-width: vars.$mediaMobile) {
+        display: block;
+    }
 }
 
 .map__contacts-time {
     @include mixins.flex(space-between, flex-start, column);
     width: 100%;
+
+    @media (max-width: vars.$mediaMobile) {
+        display: block;
+    }
 
     .map__contact-descr {
         flex-basis: auto;
@@ -64,6 +87,10 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 1.5;
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 3px;
+    }
 }
 
 .map__contact-descr {
@@ -76,7 +103,10 @@
 .map__socials {
     @include mixins.flex(flex-start, flex-start, column);
     gap: 7px;
+    white-space: nowrap;
+    overflow: auto;
 }
+
 .map__social {
     a {
         font-size: 18px;
@@ -91,5 +121,6 @@
         margin-right: 14px;
     }
 }
+
 .map__social-image {
 }
