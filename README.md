@@ -2,7 +2,7 @@
 
 **A website** for printing photos. **The design** is from Internet.
 
-[Presentation](https://alexey96may.github.io/Foxphoto-website/build/)
+[Presentation](https://alexey96may.github.io/Foxphoto-website/dist/)
 
 ## Original Design Layout
 
