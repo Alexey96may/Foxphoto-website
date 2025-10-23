@@ -1,0 +1,132 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.about {
+    padding: 44px 0 0;
+
+    @media (max-width: vars.$mediaTablet) {
+        padding: 60px 0 0;
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        padding: 16px 0 0;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: 60px 0 0;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: 45px 0 0;
+    }
+}
+
+.assortment__container {
+}
+
+.about__title {
+    display: none;
+}
+
+.about__info {
+    @media (max-width: vars.$mediaMobile) {
+        max-height: 170px;
+        overflow: hidden;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        max-height: 290px;
+    }
+}
+
+.about__article {
+    margin-bottom: 40px;
+    max-width: 80%;
+
+    @media (max-width: vars.$mediaTablet) {
+        margin-bottom: 37px;
+        max-width: 100%;
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 28px;
+    }
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.about__article-first {
+    margin-bottom: 28px;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        margin-bottom: 16px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 22px;
+    }
+}
+
+.about__article-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.63;
+    margin-bottom: 9px;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 22px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+}
+
+.see-more {
+    display: none;
+    border: none;
+    margin: 19px auto 0 auto;
+    background: none;
+    color: vars.$linkTextColor;
+
+    .see-more__opened {
+        display: inline;
+    }
+
+    .see-more__closed {
+        display: none;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        display: block;
+    }
+}
+
+.see-more--clicked {
+    .see-more__opened {
+        display: none;
+    }
+
+    .see-more__closed {
+        display: inline;
+    }
+
+    .see-more__img {
+        transform: rotateZ(180deg);
+    }
+}
+
+.see-more__img {
+    display: inline-block;
+    padding: 3px;
+    width: 23px;
+    height: 14px;
+    transition: all vars.$basicTransTime ease;
+    margin-left: 10px;
+    fill: none;
+    vertical-align: middle;
+}
