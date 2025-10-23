@@ -1,2 +1,73 @@
 @use "../utils/vars";
 @use "../utils/mixins";
+
+.footer {
+    background-color: vars.$footerBgColor;
+
+    .container {
+        padding: 31px 35px 46px;
+
+        @media (max-width: vars.$mediaMobile) {
+            padding: 31px 16px;
+        }
+    }
+}
+
+.footer__logo {
+    margin-bottom: 14px;
+
+    svg {
+        width: 276px;
+        height: 46px;
+        fill: rgba(255, 255, 255, 0);
+        transition: all vars.$basicTransTime ease;
+
+        &:hover {
+            fill: rgba(255, 255, 255, 1);
+
+            @media (hover: none) {
+                fill: rgba(255, 255, 255, 0);
+            }
+        }
+
+        @media (max-width: vars.$mediaSmallMobile) {
+            width: 200px;
+            height: 33.3px;
+        }
+    }
+}
+
+.footer__logo-link {
+    display: block;
+    line-height: 1;
+}
+
+.copyright {
+    margin-bottom: 24px;
+    font-size: 16px;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+}
+
+.footer__nav {
+    @media (max-width: vars.$mediaMobile) {
+        display: none;
+    }
+}
+
+.footer__nav-list {
+    @include mixins.flex(flex-start, center);
+    gap: 24px;
+}
+
+.footer__nav-item {
+    a {
+        line-height: 1;
+    }
+}
+
+.underline {
+}

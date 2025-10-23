@@ -3,6 +3,10 @@
 
 .contacts {
     padding-top: 51px;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding-bottom: 28px;
+    }
 }
 
 .contacts__container {
@@ -128,9 +132,6 @@
         gap: 18px;
         padding: 0px 16px;
     }
-}
-
-.contacts__title {
 }
 
 .contacts__wrapper {
