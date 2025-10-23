@@ -1,0 +1,247 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.contacts {
+    padding-top: 51px;
+}
+
+.contacts__container {
+    padding: 28px 16px;
+    background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+    @include mixins.flex(space-between, baseline);
+    gap: min(85px, 6.5vw);
+
+    @media (max-width: vars.$mediaTablet) {
+        gap: 32px;
+    }
+    @media (max-width: vars.$mediaSmallTablet) {
+        gap: 24px;
+    }
+    @media (max-width: vars.$mediaMobile) {
+        flex-direction: column;
+        background: none;
+        padding: 0;
+        gap: 18px;
+    }
+}
+
+.webp {
+    .contacts__container {
+        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+        @media (max-width: vars.$mediaMobile) {
+            background: none;
+        }
+    }
+}
+
+.avif {
+    .contacts__container {
+        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+        @media (max-width: vars.$mediaMobile) {
+            background: none;
+        }
+    }
+}
+
+.message {
+    flex-basis: 50%;
+    padding-top: 16px;
+
+    @media (max-width: vars.$mediaMobile) {
+        flex-basis: auto;
+        width: 100%;
+        padding: 19px 16px;
+        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+    }
+}
+
+.message__title {
+    color: vars.$lightTextColor;
+    margin-bottom: 24px;
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 19px;
+    }
+}
+
+.message__form {
+    @include mixins.flex(flex-start, flex-start, column);
+    gap: 10px;
+
+    textarea {
+        resize: none;
+        height: 155px;
+    }
+}
+
+.message__input {
+    padding: 11px 17px;
+    width: 100%;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: 9px 10px;
+    }
+
+    &::placeholder {
+        font-size: 16px;
+        color: #666666;
+    }
+
+    &:focus {
+        outline: 1px solid #ff7d00;
+    }
+}
+
+.message__button {
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background-color: #ff7d00;
+    color: vars.$lightTextColor;
+    margin-top: 23px;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 18px;
+        padding: 9px 28px;
+        margin-top: 6px;
+    }
+}
+
+.contacts__info {
+    @include mixins.flex(flex-start, flex-start, column);
+    align-self: stretch;
+    gap: 30px;
+    flex-basis: 50%;
+    background-color: vars.$lightBgColor;
+    padding: 16px 60px;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        padding: 16px 32px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        flex-basis: auto;
+        width: 100%;
+        gap: 18px;
+        padding: 0px 16px;
+    }
+}
+
+.contacts__title {
+}
+
+.contacts__wrapper {
+    @include mixins.flex(flex-start, flex-start, column);
+    gap: 18px;
+
+    @media (max-width: vars.$mediaMobile) {
+        width: 100%;
+        gap: 22px;
+    }
+}
+
+.contacts__contact {
+    overflow: auto;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.contacts__contact--call {
+    .contacts__contact-img {
+        width: 37px;
+        height: 34px;
+        fill: #333333;
+    }
+}
+
+.contacts__contact--mail {
+    .contacts__contact-img {
+        width: 35px;
+        height: 24px;
+        fill: #3e6e96;
+    }
+}
+
+.contacts__contact--viber {
+    .contacts__contact-img {
+        width: 41px;
+        height: 41px;
+        fill: #370475;
+    }
+}
+
+.contacts__contact--map {
+    .contacts__contact-img {
+        width: 31px;
+        height: 45px;
+        fill: #e37c1d;
+    }
+}
+
+.social {
+    .contacts__socials {
+        @media (max-width: vars.$mediaMobile) {
+            display: block;
+        }
+    }
+}
+
+.contacts__contact-link {
+    vertical-align: middle;
+}
+
+.contacts__contact-img {
+    margin-right: 30px;
+    vertical-align: middle;
+
+    @media (max-width: vars.$mediaTablet) {
+        margin-right: 24px;
+    }
+    @media (max-width: vars.$mediaMobile) {
+        margin-right: 18px;
+    }
+}
+
+.contacts__contact-text {
+    color: vars.$mainTextColor;
+}
+
+.contacts__socials {
+    @include mixins.flex(flex-start, flex-start);
+    gap: 28px;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        gap: 17px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        gap: 16px;
+        margin-top: 12px;
+    }
+
+    .social-vk {
+        @media (max-width: vars.$mediaMobile) {
+            display: block;
+
+            svg {
+                width: 48px;
+                height: 48px;
+                fill: #3e6e97;
+            }
+        }
+    }
+
+    .social-inst {
+        @media (max-width: vars.$mediaMobile) {
+            display: block;
+            svg {
+                width: 48px;
+                height: 48px;
+                fill: #3e6e97;
+            }
+        }
+    }
+}
