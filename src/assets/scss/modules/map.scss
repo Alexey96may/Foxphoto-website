@@ -7,6 +7,24 @@
     .map__container {
         padding: 0;
         position: relative;
+
+        .container {
+            @include mixins.position(absolute, -1, top, left, 16px, 50%);
+            bottom: 16px;
+            translate: -50% 0;
+            width: vars.$containerWidth;
+
+            @media (max-width: vars.$containerWidth) {
+                width: auto;
+                left: 0;
+                translate: 0;
+            }
+
+            @media (max-width: vars.$mediaMobile) {
+                position: static;
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -24,8 +42,6 @@
 .map__info {
     width: 450px;
     padding: 22px 37px;
-    @include mixins.position(absolute, -1, top, left, 16px, 16px);
-    bottom: 16px;
     background-color: rgba(255, 255, 255, 0.7);
 
     @media (max-width: vars.$mediaMobile) {

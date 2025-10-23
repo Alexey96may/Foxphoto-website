@@ -202,11 +202,13 @@
     background-color: #00afcc;
     min-height: 8px;
     padding: 0;
+    max-width: 100%;
 }
 
 .nav {
     @include mixins.flex(space-between, center);
     gap: vars.$mainGap;
+    padding: 0;
 
     @media (max-width: vars.$mediaMobile) {
         display: none;
@@ -230,7 +232,7 @@
         color: vars.$lightTextColor;
         font-weight: 700;
         white-space: nowrap;
-        padding: 14px;
+        padding: 14px 27px;
 
         @media (max-width: vars.$mediaSmallTablet) {
             font-size: 16px;
@@ -245,8 +247,23 @@
         &:hover,
         &:focus-visible {
             outline: none;
-            background-color: vars.$lightBgColor;
-            color: vars.$mainTextColor;
+            background-color: rgba(255, 255, 255, 0.3);
+
+            @media (hover: none) {
+                background-color: inherit;
+            }
+        }
+    }
+}
+
+.nav__item--filled {
+    a {
+        background-color: rgba(255, 255, 255, 0.3);
+        &:hover,
+        &:focus-visible {
+            outline: none;
+            background-color: vars.$lightTextColor;
+            color: #006879;
 
             @media (hover: none) {
                 background-color: inherit;
