@@ -46,7 +46,7 @@
 
 .webp {
     .contacts__container {
-        background: url("../../img/hero_bg.webp") center / cover no-repeat;
+        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
         @media (max-width: vars.$mediaMobile) {
             background: none;
         }
@@ -54,14 +54,14 @@
 
     .message {
         @media (max-width: vars.$mediaMobile) {
-            background: url("../../img/hero_bg.webp") center / cover no-repeat;
+            background: url("../../img/hero_bg.jpg") center / cover no-repeat;
         }
     }
 }
 
 .avif {
     .contacts__container {
-        background: url("../../img/hero_bg.avif") center / cover no-repeat;
+        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
         @media (max-width: vars.$mediaMobile) {
             background: none;
         }
@@ -69,7 +69,7 @@
 
     .message {
         @media (max-width: vars.$mediaMobile) {
-            background: url("../../img/hero_bg.avif") center / cover no-repeat;
+            background: url("../../img/hero_bg.jpg") center / cover no-repeat;
         }
     }
 }
