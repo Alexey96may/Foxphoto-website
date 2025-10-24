@@ -1,6 +1,7 @@
 import * as flsFunctions from "./ts/functions/functions";
 import { DropDownList } from "./ts/ui/dropDownList";
 import { Burger } from "./ts/ui/burger";
+import { SeeMore } from "./ts/ui/seeMore";
 import "./assets/scss/main.scss";
 
 flsFunctions.isWebp();
@@ -14,3 +15,5 @@ for (let i = 0; i < dropDownLists.length; i++) {
 }
 
 new Burger();
+
+new SeeMore();

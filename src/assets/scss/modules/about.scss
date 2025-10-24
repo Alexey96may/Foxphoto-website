@@ -26,13 +26,13 @@
 }
 
 .about__info {
+    transition: all calc(vars.$basicTransTime * 2) ease-in-out;
+
     @media (max-width: vars.$mediaMobile) {
-        max-height: 170px;
         overflow: hidden;
     }
 
     @media (max-width: vars.$mediaSmallMobile) {
-        max-height: 290px;
     }
 }
 
