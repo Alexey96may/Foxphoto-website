@@ -15,5 +15,4 @@ for (let i = 0; i < dropDownLists.length; i++) {
 }
 
 new Burger();
-
 new SeeMore();
