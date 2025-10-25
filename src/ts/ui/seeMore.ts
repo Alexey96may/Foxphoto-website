@@ -20,7 +20,7 @@ export class SeeMore {
                 } else {
                     this.divToOpen.style.height = "auto";
                 }
-            }, 0);
+            }, 100);
 
             window.addEventListener("resize", this.onResize.bind(this), true);
 
@@ -29,8 +29,6 @@ export class SeeMore {
                 this.divToOpen.style.height = this.isOpen
                     ? this.maxHeight
                     : this.minHeight;
-
-                console.log(this.maxHeight, this.minHeight);
 
                 this.classesToggle();
             });

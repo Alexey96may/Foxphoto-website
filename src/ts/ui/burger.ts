@@ -18,8 +18,6 @@ export class Burger {
                 this.#isMenuOpen &&
                 (event.target as HTMLElement).tagName?.toLowerCase() === "a"
             ) {
-                console.log((event.target as HTMLElement).closest("header"));
-
                 this.toggleMenu();
                 this.classesToggle();
             }

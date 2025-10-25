@@ -14,6 +14,70 @@
     }
 }
 
+.buttonUp {
+    @include mixins.position(fixed, -1, bottom, right, 40px, 40px);
+    transition: all vars.$basicTransTime ease;
+    z-index: 9;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+
+    @media (max-width: vars.$mediaMobile) {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.uppButton--visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.buttonUp-img {
+    width: 50px;
+    height: 50px;
+    transition: all vars.$basicTransTime ease;
+
+    @media (max-width: vars.$mediaMobile) {
+        width: 35px;
+        height: 35px;
+    }
+
+    #buttonUpCircle,
+    #buttonUpPath {
+        transition: all vars.$basicTransTime ease;
+        stroke: rgba(0, 98, 109, 0.5);
+    }
+
+    #buttonUpCircle {
+        fill: rgba(255, 255, 255, 0.5);
+    }
+
+    #buttonUpPath {
+        fill: none;
+    }
+
+    &:hover {
+        #buttonUpCircle {
+            fill: rgba(255, 255, 255, 1);
+            stroke: rgba(0, 98, 109, 1);
+
+            @media (hover: none) {
+                fill: rgba(255, 255, 255, 0.5);
+                stroke: rgba(0, 98, 109, 0.5);
+            }
+        }
+
+        #buttonUpPath {
+            stroke: rgba(0, 98, 109, 1);
+
+            @media (hover: none) {
+                stroke: rgba(0, 98, 109, 0.5);
+            }
+        }
+    }
+}
+
 .info {
     @include mixins.flex(flex-start, center);
     gap: 34px;
@@ -230,7 +294,7 @@
 
     @media (max-width: vars.$mediaMobile) {
         z-index: 2;
-        @include mixins.position(absolute, -1, top, left, auto, 0);
+        @include mixins.position(absolute, -1, top, left, auto, -100);
         align-items: flex-start;
         flex-direction: column;
         gap: 2px;
@@ -243,6 +307,7 @@
 .navigation--appear {
     visibility: visible;
     opacity: 1;
+    left: 0;
 }
 
 .nav__list {

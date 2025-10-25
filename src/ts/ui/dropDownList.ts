@@ -13,7 +13,6 @@ export class DropDownList {
             if (this.isListOpen) {
                 this.isListOpen = false;
                 this.element.style.height = "44px";
-                console.log(this.isListOpen);
             } else {
                 this.isListOpen = true;
                 this.element.style.height = this.elemHeight + "px";
