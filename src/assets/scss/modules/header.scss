@@ -205,11 +205,6 @@
         margin-left: 50%;
         width: 0;
 
-        &::before,
-        &::after {
-            // background-color: #ffffff;
-        }
-
         &::before {
             transform: translateY(8px) rotateZ(45deg);
         }
@@ -288,6 +283,8 @@
 }
 
 .nav__item {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
     @media (max-width: vars.$mediaMobile) {
         background-color: #00afcc;
         flex-grow: 1;
@@ -311,7 +308,7 @@
             padding: 12px;
         }
 
-        @media (max-width: vars.$mediaSmallTablet) {
+        @media (max-width: vars.$mediaMobile) {
             font-size: 14px;
             padding: 15px 22px;
         }
