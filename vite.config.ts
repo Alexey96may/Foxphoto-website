@@ -8,7 +8,6 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import viteCompression from "vite-plugin-compression";
 import { optimizeImages } from "./config/img/imageOptimizer";
 import { fontPlugIn } from "./config/fonts/font-plugin";
-// import cp from "vite-plugin-cp";
 import { wrapImgWithPicture } from "./config/img/wrapImgWithPicture";
 import { DEFAULT_OPTIONS } from "./config/img/imageOptimizerConfig";
 import path from "path";
@@ -26,27 +25,6 @@ export default {
                 "_fonts.scss"
             )
         ),
-
-        // cp({
-        //     targets: [
-        //         {
-        //             src: path.resolve(__dirname, "./src/assets/img/**/*.jpg"),
-        //             dest: path.resolve(__dirname, "dist/assets/img"),
-        //         },
-        //         {
-        //             src: path.resolve(__dirname, "./src/assets/img/**/*.jpeg"),
-        //             dest: path.resolve(__dirname, "dist/assets/img"),
-        //         },
-        //         {
-        //             src: path.resolve(__dirname, "./src/assets/img/**/*.png"),
-        //             dest: path.resolve(__dirname, "dist/assets/img"),
-        //         },
-        //         {
-        //             src: path.resolve(__dirname, "./src/assets/fonts/**/*.*"),
-        //             dest: path.resolve(__dirname, "dist/assets/fonts"),
-        //         },
-        //     ],
-        // }),
 
         svgSpritemap({
             pattern: "src/assets/sprites/*.svg",
@@ -117,6 +95,7 @@ export default {
                     let extType = assetInfo.name.split(".").at(1);
                     if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
                         extType = "img";
+                        return `assets/${extType}/[name][extname]`;
                     }
                     if (/woff2?|otf|ttf|eot/i.test(extType)) {
                         extType = "fonts";

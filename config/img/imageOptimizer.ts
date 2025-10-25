@@ -28,12 +28,12 @@ export async function optimizeImages(imgPath: string) {
 
             // Конвертация в WebP
             await sharp(inputFilePath)
-                .webp({ lossless: true, quality: 75 })
+                .webp({ quality: 65 })
                 .toFile(outputFilePathWebP);
 
             // Конвертация в AVIF
             await sharp(inputFilePath)
-                .avif({ quality: 75 })
+                .avif({ quality: 65 })
                 .toFile(outputFilePathAVIF);
         }
     }

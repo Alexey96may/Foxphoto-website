@@ -10,13 +10,13 @@
 
 .webp {
     .hero__up-container {
-        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+        background: url("../../img/hero_bg.webp") center / cover no-repeat;
     }
 }
 
 .avif {
     .hero__up-container {
-        background: url("../../img/hero_bg.jpg") center / cover no-repeat;
+        background: url("../../img/hero_bg.avif") center / cover no-repeat;
     }
 }
 
@@ -192,6 +192,36 @@
 
             @media (max-width: vars.$mediaTablet) {
                 display: none;
+            }
+        }
+    }
+}
+
+.webp {
+    .hero__bottom-container {
+        .container {
+            &::before {
+                background: url("../../img/hero-bag.webp") center / cover
+                    no-repeat;
+
+                @media (max-width: vars.$mediaTablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.avif {
+    .hero__bottom-container {
+        .container {
+            &::before {
+                background: url("../../img/hero-bag.avif") center / cover
+                    no-repeat;
+
+                @media (max-width: vars.$mediaTablet) {
+                    display: none;
+                }
             }
         }
     }
